@@ -29,6 +29,9 @@
                             <constraint firstAttribute="bottom" secondItem="fZu-by-p28" secondAttribute="bottom" id="TCV-T1-Wb8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arView" destination="fZu-by-p28" id="HWG-Et-qp6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
