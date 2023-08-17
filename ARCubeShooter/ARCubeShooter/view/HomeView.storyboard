@@ -19,18 +19,50 @@
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZu-by-p28">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </arView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Neo-Zq-bwD">
+                                <rect key="frame" x="146.66666666666666" y="708" width="100" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2GP-s3-oBi"/>
+                                    <constraint firstAttribute="height" constant="80" id="gb9-bX-PWL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="tappedMakeButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lIX-tV-oem"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GsY-MJ-HDl">
+                                <rect key="frame" x="30" y="658" width="333" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cRt-oc-ANK"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Neo-Zq-bwD" secondAttribute="bottom" constant="30" id="1wJ-DW-GGG"/>
                             <constraint firstItem="fZu-by-p28" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4de-9G-UV3"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fZu-by-p28" secondAttribute="trailing" id="BNT-u0-ZGa"/>
+                            <constraint firstItem="Neo-Zq-bwD" firstAttribute="top" secondItem="GsY-MJ-HDl" secondAttribute="bottom" constant="20" id="KBh-l8-e3w"/>
                             <constraint firstItem="fZu-by-p28" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="NSj-Ke-Xy2"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GsY-MJ-HDl" secondAttribute="trailing" constant="30" id="PAO-3e-AnI"/>
                             <constraint firstAttribute="bottom" secondItem="fZu-by-p28" secondAttribute="bottom" id="TCV-T1-Wb8"/>
+                            <constraint firstItem="GsY-MJ-HDl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="bGp-85-fwp"/>
+                            <constraint firstItem="Neo-Zq-bwD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ifm-4t-9co"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="arView" destination="fZu-by-p28" id="HWG-Et-qp6"/>
+                        <outlet property="makeButton" destination="Neo-Zq-bwD" id="9m5-Kf-yrf"/>
+                        <outlet property="numberOfCubesSegmentedControl" destination="GsY-MJ-HDl" id="2h1-aQ-mYw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
