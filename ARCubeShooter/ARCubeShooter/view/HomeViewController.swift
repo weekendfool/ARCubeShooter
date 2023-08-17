@@ -118,6 +118,18 @@ class HomeViewController: UIViewController {
 //        anchor?.position = simd_make_float3(0, -0.5, -1.5)
         anchor?.position = cubePositon!
         
+        // 弾丸発射
+        // 着弾点のアンカー
+        let goalAnchor = AnchorEntity()
+        // 着弾点(カメラ座標？）
+        let goalPositionOnLocal = SIMD3<Float>(x: 0, y: 0, z: -1)
+        // 着弾点(ワールド座標？）
+        let goalPositionOnOrigen = goalAnchor.convert(position: goalPositionOnLocal, to: worldAnchor)
+        
+        let movePosition = float4x4.init(translation: goalPositionOnOrigen)
+        
+        
+        
         // cube実装
         let size = Float(0.09 / 3.0)
         let length = size + size / 5
@@ -254,6 +266,12 @@ class HomeViewController: UIViewController {
         
         // 追加
         arView.scene.addAnchor(anchor!)
+        
+        // 発射処理
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            let anime = firstCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
     }
     
     
