@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
         setupAR()
         
 //        makeCube()
-        makeNineCubes()
+        makeFourCubes()
         
     }
     
@@ -98,6 +98,97 @@ class HomeViewController: UIViewController {
         anchor?.addChild(cube)
         // 追加
         arView.scene.addAnchor(anchor!)
+        
+    }
+    
+    // キューブ生成：4個
+    func makeFourCubes() {
+        // 初期化
+        if let anchor = self.anchor {
+            self.anchor = nil
+        }
+        
+        // AnchorEntity生成
+        anchor = AnchorEntity()
+        // カメラ座標
+        let infrontOfCamera = SIMD3<Float>(x: 0, y: 0, z: -0.05)
+        // カメラ座標　→ ワールド座標
+        let cubePositon = anchor?.convert(position: infrontOfCamera, to: worldAnchor)
+        
+//        anchor?.position = simd_make_float3(0, -0.5, -1.5)
+        anchor?.position = cubePositon!
+        
+        // 弾丸発射
+        // 着弾点のアンカー
+        let goalAnchor = AnchorEntity()
+        // 着弾点(カメラ座標？）
+        let goalPositionOnLocal = SIMD3<Float>(x: 0, y: 0, z: -1)
+        // 着弾点(ワールド座標？）
+        let goalPositionOnOrigen = goalAnchor.convert(position: goalPositionOnLocal, to: worldAnchor)
+        
+        let movePosition = float4x4.init(translation: goalPositionOnOrigen)
+        
+        
+        
+        
+        // cube実装
+        let size = Float(0.09 / 2.0)
+        let length = size + size / 5
+        let mesh = MeshResource.generateBox(size: [size, size, size])
+        let material = SimpleMaterial(color: .cyan.withAlphaComponent(0.9), isMetallic: false)
+        
+//        let material2 = SimpleMaterial(color: .red, isMetallic: false)
+//        let center = ModelEntity(mesh: mesh, materials: [material2])
+//        center.position = anchor!.position
+        
+        // 1
+        
+        let firstCube1 = ModelEntity(mesh: mesh, materials: [material])
+        firstCube1.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        
+        let secondCube1 = ModelEntity(mesh: mesh, materials: [material])
+        secondCube1.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        
+        
+        let thirdCube1 = ModelEntity(mesh: mesh, materials: [material])
+        thirdCube1.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
+        let fourthCube1 = ModelEntity(mesh: mesh, materials: [material])
+        fourthCube1.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
+     
+        // 2
+        let firstCube2 = ModelEntity(mesh: mesh, materials: [material])
+        firstCube2.position =  simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        
+        let secondCube2 = ModelEntity(mesh: mesh, materials: [material])
+        secondCube2.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        
+        let thirdCube2 = ModelEntity(mesh: mesh, materials: [material])
+        thirdCube2.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+        
+        let fourthCube2 = ModelEntity(mesh: mesh, materials: [material])
+        fourthCube2.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+        
+//        anchor!.addChild(center)
+        anchor?.addChild(firstCube1)
+        anchor?.addChild(secondCube1)
+        anchor?.addChild(thirdCube1)
+        
+        anchor?.addChild(fourthCube1)
+         
+        anchor?.addChild(firstCube2)
+        anchor?.addChild(secondCube2)
+        anchor?.addChild(thirdCube2)
+        anchor?.addChild(fourthCube2)
+      
+        // 追加
+        arView.scene.addAnchor(anchor!)
+        
+        // 発射処理
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//            let anime = firstCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+//        }
         
     }
     
