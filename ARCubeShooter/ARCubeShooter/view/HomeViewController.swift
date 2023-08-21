@@ -22,12 +22,14 @@ class HomeViewController: UIViewController {
     // MARK: - 変数
    
     var anchor: AnchorEntity?
-    
-    var cubeModel: ModelEntity?
-    
+//    var cubeModel: ModelEntity?
     var worldAnchor: AnchorEntity?
+//    var cubeModels: [ModelEntity] = []
+    var shieldModel: AnchorEntity?
     
-    var cubeModels: [ModelEntity] = []
+    var life: Int = 100
+    var speed: Int = 0
+    var point: Int = 0
     // MARK: - ライフサイクル
     
     override func viewDidLoad() {
@@ -187,14 +189,14 @@ class HomeViewController: UIViewController {
         
 //        anchor!.addChild(center)
         
-        cubeModels.append(firstCube1)
-        cubeModels.append(secondCube1)
-        cubeModels.append(thirdCube1)
-        cubeModels.append(fourthCube1)
-        cubeModels.append(firstCube2)
-        cubeModels.append(secondCube2)
-        cubeModels.append(thirdCube2)
-        cubeModels.append(fourthCube2)
+//        cubeModels.append(firstCube1)
+//        cubeModels.append(secondCube1)
+//        cubeModels.append(thirdCube1)
+//        cubeModels.append(fourthCube1)
+//        cubeModels.append(firstCube2)
+//        cubeModels.append(secondCube2)
+//        cubeModels.append(thirdCube2)
+//        cubeModels.append(fourthCube2)
         
         anchor?.addChild(firstCube1)
         anchor?.addChild(secondCube1)
@@ -223,9 +225,6 @@ class HomeViewController: UIViewController {
         if let anchor = self.anchor {
             self.anchor = nil
             anchor.removeFromParent()
-            for model in cubeModels {
-                self.anchor?.removeChild(model)
-            }
         }
         
         // AnchorEntity生成
@@ -1376,6 +1375,39 @@ class HomeViewController: UIViewController {
         
     }
     
+    // シールド生成
+    func makeShield() {
+        
+        // 初期化
+        if let shieldModel = self.shieldModel {
+            self.shieldModel = nil
+            shieldModel.removeFromParent()
+        }
+        // AnchorEntity生成
+        shieldModel = AnchorEntity()
+        // カメラ座標
+        let transform = arView.cameraTransform.translation
+        let infrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 0.3)
+        
+        let goalInfrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 2.0)
+        // カメラ座標　→ ワールド座標
+        let cubePositon = shieldModel?.convert(position: goalInfrontOfCamera, to: worldAnchor)
+        
+        let movePosition = float4x4.init(translation: cubePositon!)
+      
+        shieldModel?.position = infrontOfCamera
+        
+        
+        // cube実装
+        let mesh = MeshResource.generateBox(size: [0.5, 0.9, 0.009])
+        let material = SimpleMaterial(color: .magenta.withAlphaComponent(0.5), isMetallic: false)
+        let shield = ModelEntity(mesh: mesh, materials: [material])
+        
+        shieldModel?.addChild(shield)
+        // 追加
+        arView.scene.addAnchor(shieldModel!)
+    }
+    
     
     func makeAnchor() {
         // AnchorEntity生成
@@ -1413,8 +1445,31 @@ class HomeViewController: UIViewController {
         
     }
     
+    func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
+        for anchor in anchors {
+            if let myAnchor = anchor as? ARParticipantAnchor {
+                // AnchorEntity生成
+                let anchorEntity = AnchorEntity(anchor: myAnchor)
+                
+                
+//                anchor2.position = infrontOfCamera
+                
+                
+                // cube実装
+                let mesh = MeshResource.generateBox(size: [0.09, 0.09, 0.09])
+                let material = SimpleMaterial(color: .cyan, isMetallic: false)
+                let cube = ModelEntity(mesh: mesh, materials: [material])
+                
+                anchorEntity.addChild(cube)
+                arView.scene.addAnchor(anchorEntity)
+                
+                print("eye")
+            }
+        }
+    }
+    
     @IBAction func tappedMakeButton(_ sender: Any) {
-        makeAnchor()
+        makeShield()
     }
     
     
