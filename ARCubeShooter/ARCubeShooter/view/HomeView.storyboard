@@ -43,6 +43,9 @@
                                     <segment title="4"/>
                                     <segment title="5"/>
                                 </segments>
+                                <connections>
+                                    <action selector="selectedNumber:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ejv-R0-lJx"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

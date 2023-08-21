@@ -20,11 +20,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var makeButton: UIButton!
     
     // MARK: - 変数
+   
     var anchor: AnchorEntity?
     
     var cubeModel: ModelEntity?
     
     var worldAnchor: AnchorEntity?
+    
+    var cubeModels: [ModelEntity] = []
     // MARK: - ライフサイクル
     
     override func viewDidLoad() {
@@ -33,7 +36,7 @@ class HomeViewController: UIViewController {
         setupAR()
         
 //        makeCube()
-        makeSixteenCubes()
+//        makeSixteenCubes()
         
     }
     
@@ -62,6 +65,7 @@ class HomeViewController: UIViewController {
     
     
     
+    
     func makeCube() {
         
         // AnchorEntity生成
@@ -84,14 +88,24 @@ class HomeViewController: UIViewController {
         // 初期化
         if let anchor = self.anchor {
             self.anchor = nil
+            anchor.removeFromParent()
         }
         
         // AnchorEntity生成
         anchor = AnchorEntity()
-        anchor?.position = simd_make_float3(0, -0.5, -1.5)
+        // カメラ座標
+        let infrontOfCamera = SIMD3<Float>(x: 0, y: 0, z: -0.05)
+        // カメラ座標　→ ワールド座標
+        let cubePositon = anchor?.convert(position: infrontOfCamera, to: worldAnchor)
+        
+//        anchor?.position = simd_make_float3(0, -0.5, -1.5)
+//        anchor?.position = cubePositon!
+        
+        anchor?.position = infrontOfCamera
+        
         
         // cube実装
-        let mesh = MeshResource.generateBox(size: [0.9, 0.9, 0.9])
+        let mesh = MeshResource.generateBox(size: [0.09, 0.09, 0.09])
         let material = SimpleMaterial(color: .cyan, isMetallic: false)
         let cube = ModelEntity(mesh: mesh, materials: [material])
         
@@ -106,6 +120,7 @@ class HomeViewController: UIViewController {
         // 初期化
         if let anchor = self.anchor {
             self.anchor = nil
+            anchor.removeFromParent()
         }
         
         // AnchorEntity生成
@@ -171,6 +186,16 @@ class HomeViewController: UIViewController {
         fourthCube2.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
         
 //        anchor!.addChild(center)
+        
+        cubeModels.append(firstCube1)
+        cubeModels.append(secondCube1)
+        cubeModels.append(thirdCube1)
+        cubeModels.append(fourthCube1)
+        cubeModels.append(firstCube2)
+        cubeModels.append(secondCube2)
+        cubeModels.append(thirdCube2)
+        cubeModels.append(fourthCube2)
+        
         anchor?.addChild(firstCube1)
         anchor?.addChild(secondCube1)
         anchor?.addChild(thirdCube1)
@@ -197,6 +222,10 @@ class HomeViewController: UIViewController {
         // 初期化
         if let anchor = self.anchor {
             self.anchor = nil
+            anchor.removeFromParent()
+            for model in cubeModels {
+                self.anchor?.removeChild(model)
+            }
         }
         
         // AnchorEntity生成
@@ -370,6 +399,7 @@ class HomeViewController: UIViewController {
         // 初期化
         if let anchor = self.anchor {
             self.anchor = nil
+            anchor.removeFromParent()
         }
         
         // AnchorEntity生成
@@ -630,7 +660,6 @@ class HomeViewController: UIViewController {
         fourthRowFourthCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! +  length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
         
                
-        anchor!.addChild(center)
         
         anchor?.addChild(firstRowFirstCulmnFirstStrataCube)
         anchor?.addChild(firstRowFirstCulmnSecondStrataCube)
@@ -734,6 +763,7 @@ class HomeViewController: UIViewController {
         // 初期化
         if let anchor = self.anchor {
             self.anchor = nil
+            anchor.removeFromParent()
         }
         
         // AnchorEntity生成
@@ -1347,11 +1377,66 @@ class HomeViewController: UIViewController {
     }
     
     
-    
-    
-    @IBAction func tappedMakeButton(_ sender: Any) {
+    func makeAnchor() {
+        // AnchorEntity生成
+        let anchor2 = AnchorEntity()
+        // カメラ座標
+        let transform = arView.cameraTransform.translation
+        let infrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 0.3)
+        
+        let goalInfrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 2.0)
+        // カメラ座標　→ ワールド座標
+        let cubePositon = anchor2.convert(position: goalInfrontOfCamera, to: worldAnchor)
+        
+        let movePosition = float4x4.init(translation: cubePositon)
+        
+//        anchor?.position = simd_make_float3(0, -0.5, -1.5)
+//        anchor?.position = cubePositon!
+        
+        anchor2.position = infrontOfCamera
+        
+        
+        // cube実装
+        let mesh = MeshResource.generateBox(size: [0.09, 0.09, 0.09])
+        let material = SimpleMaterial(color: .cyan, isMetallic: false)
+        let cube = ModelEntity(mesh: mesh, materials: [material])
+        
+        anchor2.addChild(cube)
+        // 追加
+        arView.scene.addAnchor(anchor2)
+        
+        
+        // 発射処理
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            let anime = cube.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
     }
     
+    @IBAction func tappedMakeButton(_ sender: Any) {
+        makeAnchor()
+    }
+    
+    
+
+    @IBAction func selectedNumber(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.makeACube()
+        case 1:
+            self.makeFourCubes()
+        case 2:
+            self.makeNineCubes()
+        case 3:
+            self.makeSixteenCubes()
+        case 4:
+            self.makeTwentyFiveCubes()
+        default:
+            return
+        
+        }
+    }
+   
 }
 
 // MARK: - extension
