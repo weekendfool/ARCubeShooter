@@ -8,6 +8,7 @@
 import UIKit
 import RealityKit
 import ARKit
+import Combine
 
 class HomeViewController: UIViewController {
     
@@ -39,6 +40,9 @@ class HomeViewController: UIViewController {
         
 //        makeCube()
 //        makeSixteenCubes()
+//        makeShield()
+        
+    
         
     }
     
@@ -62,6 +66,19 @@ class HomeViewController: UIViewController {
         worldAnchor = AnchorEntity(world: [0, 0, 0])
         arView.scene.addAnchor(worldAnchor!)
     
+        arView.scene.subscribe(to: CollisionEvents.Began.self) { event in
+            if event.entityA.name == "shield" && event.entityB.name == "cube" {
+                print("ffffffffffffffffffoooooooooooooo")
+            }
+            
+            if event.entityA.name == "shield"  {
+                print("gggggggggggggggggggggg")
+            }
+            
+            if  event.entityB.name == "cube" {
+                print("oooooooooooooo")
+            }
+        }
         
     }
     
@@ -1387,7 +1404,7 @@ class HomeViewController: UIViewController {
         shieldModel = AnchorEntity()
         // カメラ座標
         let transform = arView.cameraTransform.translation
-        let infrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 0.3)
+        let infrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 1.0)
         
         let goalInfrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 2.0)
         // カメラ座標　→ ワールド座標
@@ -1402,6 +1419,11 @@ class HomeViewController: UIViewController {
         let mesh = MeshResource.generateBox(size: [0.5, 0.9, 0.009])
         let material = SimpleMaterial(color: .magenta.withAlphaComponent(0.5), isMetallic: false)
         let shield = ModelEntity(mesh: mesh, materials: [material])
+        
+        
+        shield.name = "shield"
+        shield.generateCollisionShapes(recursive: false)
+        
         
         shieldModel?.addChild(shield)
         // 追加
@@ -1445,6 +1467,321 @@ class HomeViewController: UIViewController {
         
     }
     
+    func makeNineCubesShooterVer() {
+        // 初期化
+        if let anchor = self.anchor {
+            self.anchor = nil
+            anchor.removeFromParent()
+        }
+        
+        // AnchorEntity生成
+        anchor = AnchorEntity()
+        
+        // カメラ座標
+        let transform = arView.cameraTransform.translation
+        let infrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 0.3)
+        
+        let goalInfrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 2.0)
+        // カメラ座標　→ ワールド座標
+        let cubePositon = anchor?.convert(position: goalInfrontOfCamera, to: worldAnchor)
+        
+        let movePosition = float4x4.init(translation: cubePositon!)
+        
+
+        anchor?.position = infrontOfCamera
+        
+        
+
+        
+        // cube実装
+        let size = Float(0.09 / 3.0)
+        let length = size + size / 5
+        let mesh = MeshResource.generateBox(size: [size, size, size])
+        let material = SimpleMaterial(color: .cyan.withAlphaComponent(0.9), isMetallic: false)
+        
+        // 1
+        
+        let firstCube1 = ModelEntity(mesh: mesh, materials: [material])
+        firstCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        firstCube1.name = "cube"
+        firstCube1.generateCollisionShapes(recursive: false)
+        
+        let secondCube1 = ModelEntity(mesh: mesh, materials: [material])
+        secondCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        secondCube1.name = "cube"
+        secondCube1.generateCollisionShapes(recursive: false)
+        
+        let thirdCube1 = ModelEntity(mesh: mesh, materials: [material])
+        thirdCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        thirdCube1.name = "cube"
+        thirdCube1.generateCollisionShapes(recursive: false)
+        
+        let fourthCube1 = ModelEntity(mesh: mesh, materials: [material])
+        fourthCube1.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, (anchor?.position.z)!)
+        fourthCube1.name = "cube"
+        fourthCube1.generateCollisionShapes(recursive: false)
+        
+        let fifthCube1 = ModelEntity(mesh: mesh, materials: [material])
+        fifthCube1.position = anchor!.position
+        fifthCube1.name = "cube"
+        fifthCube1.generateCollisionShapes(recursive: false)
+        
+        let sixthCube1 = ModelEntity(mesh: mesh, materials: [material])
+        sixthCube1.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, (anchor?.position.z)!)
+        sixthCube1.name = "cube"
+        
+        let seventhCube1 = ModelEntity(mesh: mesh, materials: [material])
+        seventhCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        seventhCube1.name = "cube"
+        seventhCube1.generateCollisionShapes(recursive: false)
+        
+        let eighthCube1 = ModelEntity(mesh: mesh, materials: [material])
+        eighthCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        eighthCube1.name = "cube"
+        eighthCube1.generateCollisionShapes(recursive: false)
+        
+        let ninethCube1 = ModelEntity(mesh: mesh, materials: [material])
+        ninethCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        ninethCube1.name = "cube"
+        ninethCube1.generateCollisionShapes(recursive: false)
+        
+        
+        // 2
+        let firstCube2 = ModelEntity(mesh: mesh, materials: [material])
+        firstCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        firstCube2.name = "cube"
+        
+        let secondCube2 = ModelEntity(mesh: mesh, materials: [material])
+        secondCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        secondCube2.name = "cube"
+        
+        let thirdCube2 = ModelEntity(mesh: mesh, materials: [material])
+        thirdCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        thirdCube2.name = "cube"
+        
+        let fourthCube2 = ModelEntity(mesh: mesh, materials: [material])
+        fourthCube2.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        fourthCube2.name = "cube"
+        
+        let fifthCube2 = ModelEntity(mesh: mesh, materials: [material])
+        fifthCube2.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        fifthCube2.name = "cube"
+        
+        let sixthCube2 = ModelEntity(mesh: mesh, materials: [material])
+        sixthCube2.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        sixthCube2.name = "cube"
+        
+        let seventhCube2 = ModelEntity(mesh: mesh, materials: [material])
+        seventhCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        seventhCube2.name = "cube"
+        
+        let eighthCube2 = ModelEntity(mesh: mesh, materials: [material])
+        eighthCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        eighthCube2.name = "cube"
+        
+        let ninethCube2 = ModelEntity(mesh: mesh, materials: [material])
+        ninethCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        ninethCube2.name = "cube"
+        
+        // 3
+        let firstCube3 = ModelEntity(mesh: mesh, materials: [material])
+        firstCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        firstCube3.name = "cube"
+        
+        let secondCube3 = ModelEntity(mesh: mesh, materials: [material])
+        secondCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        secondCube3.name = "cube"
+        
+        let thirdCube3 = ModelEntity(mesh: mesh, materials: [material])
+        thirdCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        thirdCube3.name = "cube"
+        
+        let fourthCube3 = ModelEntity(mesh: mesh, materials: [material])
+        fourthCube3.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        fourthCube3.name = "cube"
+        
+        let fifthCube3 = ModelEntity(mesh: mesh, materials: [material])
+        fifthCube3.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        fifthCube3.name = "cube"
+        
+        let sixthCube3 = ModelEntity(mesh: mesh, materials: [material])
+        sixthCube3.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        sixthCube3.name = "cube"
+        
+        let seventhCube3 = ModelEntity(mesh: mesh, materials: [material])
+        seventhCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        seventhCube3.name = "cube"
+        
+        let eighthCube3 = ModelEntity(mesh: mesh, materials: [material])
+        eighthCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        eighthCube3.name = "cube"
+        
+        let ninethCube3 = ModelEntity(mesh: mesh, materials: [material])
+        ninethCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        ninethCube3.name = "cube"
+        
+        
+        // センターキューブ
+
+        anchor?.addChild(firstCube1)
+        anchor?.addChild(secondCube1)
+        anchor?.addChild(thirdCube1)
+        
+        anchor?.addChild(fourthCube1)
+        anchor?.addChild(fifthCube1)
+        anchor?.addChild(sixthCube1)
+        
+        anchor?.addChild(seventhCube1)
+        anchor?.addChild(eighthCube1)
+        anchor?.addChild(ninethCube1)
+        
+        anchor?.addChild(firstCube2)
+        anchor?.addChild(secondCube2)
+        anchor?.addChild(thirdCube2)
+        
+        anchor?.addChild(fourthCube2)
+        anchor?.addChild(fifthCube2)
+        anchor?.addChild(sixthCube2)
+        
+        anchor?.addChild(seventhCube2)
+        anchor?.addChild(eighthCube2)
+        anchor?.addChild(ninethCube2)
+        
+        anchor?.addChild(firstCube3)
+        anchor?.addChild(secondCube3)
+        anchor?.addChild(thirdCube3)
+        
+        anchor?.addChild(fourthCube3)
+        anchor?.addChild(fifthCube3)
+        anchor?.addChild(sixthCube3)
+        
+        anchor?.addChild(seventhCube3)
+        anchor?.addChild(eighthCube3)
+        anchor?.addChild(ninethCube3)
+        
+        // 追加
+        arView.scene.addAnchor(anchor!)
+        
+        // 発射処理
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            let anime = firstCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.1) {
+            let anime = secondCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.2) {
+            let anime = thirdCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.3) {
+            let anime = fourthCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.4) {
+            let anime = fifthCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
+            let anime = sixthCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.6) {
+            let anime = seventhCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.7) {
+            let anime = eighthCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.8) {
+            let anime = ninethCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.9) {
+            let anime = firstCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+            let anime = secondCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.1) {
+            let anime = thirdCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.2) {
+            let anime = fourthCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.3) {
+            let anime = fifthCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.4) {
+            let anime = sixthCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.5) {
+            let anime = seventhCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.6) {
+            let anime = eighthCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.7) {
+            let anime = ninethCube2.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.8) {
+            let anime = firstCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.9) {
+            let anime = secondCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
+            let anime = thirdCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.1) {
+            let anime = fourthCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.2) {
+            let anime = fifthCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.3) {
+            let anime = sixthCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.4) {
+            let anime = seventhCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
+            let anime = eighthCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.6) {
+            let anime = ninethCube3.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+        }
+        
+        
+        
+    }
+
+    
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
         for anchor in anchors {
             if let myAnchor = anchor as? ARParticipantAnchor {
@@ -1469,7 +1806,9 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func tappedMakeButton(_ sender: Any) {
-        makeShield()
+        
+       makeShield()
+        makeNineCubesShooterVer()
     }
     
     
