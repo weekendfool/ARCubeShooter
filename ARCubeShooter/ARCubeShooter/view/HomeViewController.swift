@@ -31,6 +31,8 @@ class HomeViewController: UIViewController {
     var life: Int = 100
     var speed: Int = 0
     var point: Int = 0
+    
+    var collisionBegan: Cancellable?
     // MARK: - ライフサイクル
     
     override func viewDidLoad() {
@@ -65,20 +67,22 @@ class HomeViewController: UIViewController {
         // 原点取得
         worldAnchor = AnchorEntity(world: [0, 0, 0])
         arView.scene.addAnchor(worldAnchor!)
+        
+        collisionBegan = arView.scene.subscribe(to: CollisionEvents.Began.self, onCollisionBegan(_:))
     
-        arView.scene.subscribe(to: CollisionEvents.Began.self) { event in
-            if event.entityA.name == "shield" && event.entityB.name == "cube" {
-                print("ffffffffffffffffffoooooooooooooo")
-            }
-            
-            if event.entityA.name == "shield"  {
-                print("gggggggggggggggggggggg")
-            }
-            
-            if  event.entityB.name == "cube" {
-                print("oooooooooooooo")
-            }
-        }
+//        arView.scene.subscribe(to: CollisionEvents.Began.self) { event in
+//            if event.entityA.name == "shield" && event.entityB.name == "cube" {
+//                print("ffffffffffffffffffoooooooooooooo")
+//            }
+//
+//            if event.entityA.name == "shield"  {
+//                print("gggggggggggggggggggggg")
+//            }
+//
+//            if  event.entityB.name == "cube" {
+//                print("oooooooooooooo")
+//            }
+//        }
         
     }
     
@@ -1431,6 +1435,21 @@ class HomeViewController: UIViewController {
     }
     
     
+    func onCollisionBegan(_ event: CollisionEvents.Began) {
+        if event.entityA.name == "shield" && event.entityB.name == "cube" {
+                        print("ffffffffffffffffffoooooooooooooo")
+                    }
+        
+                    if event.entityA.name == "shield"  {
+                        print("gggggggggggggggggggggg")
+                    }
+        
+                    if  event.entityB.name == "cube" {
+                        print("oooooooooooooo")
+                    }
+        
+        
+    }
     func makeAnchor() {
         // AnchorEntity生成
         let anchor2 = AnchorEntity()
