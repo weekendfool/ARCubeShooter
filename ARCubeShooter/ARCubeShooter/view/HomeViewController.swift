@@ -28,6 +28,173 @@ class HomeViewController: UIViewController {
 //    var cubeModels: [ModelEntity] = []
     var shieldModel: AnchorEntity?
     
+    
+    // cubeEntity
+    // 1Strata
+    // 1Row
+    var firstRowFirstCulmnFirstStrataCube: ModelEntity?
+    var firstRowSecondCulmnFirstStrataCube: ModelEntity?
+    var firstRowThirdCulmnFirstStrataCube: ModelEntity?
+    var firstRowFourthCulmnFirstStrataCube: ModelEntity?
+    var firstRowFifthCulmnFirstStrataCube: ModelEntity?
+    // 2Row
+    var secondRowFirstCulmnFirstStrataCube: ModelEntity?
+    var secondRowSecondCulmnFirstStrataCube: ModelEntity?
+    var secondRowThirdCulmnFirstStrataCube: ModelEntity?
+    var secondRowFourthCulmnFirstStrataCube: ModelEntity?
+    var secondRowFifthCulmnFirstStrataCube: ModelEntity?
+    // 3Row
+    var thirdRowFirstCulmnFirstStrataCube: ModelEntity?
+    var thirdRowSecondCulmnFirstStrataCube: ModelEntity?
+    var thirdRowThirdCulmnFirstStrataCube: ModelEntity?
+    var thirdRowFourthCulmnFirstStrataCube: ModelEntity?
+    var thirdRowFifthCulmnFirstStrataCube: ModelEntity?
+    // 4Row
+    var fourthRowFirstCulmnFirstStrataCube: ModelEntity?
+    var fourthRowSecondCulmnFirstStrataCube: ModelEntity?
+    var fourthRowThirdCulmnFirstStrataCube: ModelEntity?
+    var fourthRowFourthCulmnFirstStrataCube: ModelEntity?
+    var fourthRowFifthCulmnFirstStrataCube: ModelEntity?
+    // 5Row
+    var fifthRowFirstCulmnFirstStrataCube: ModelEntity?
+    var fifthRowSecondCulmnFirstStrataCube: ModelEntity?
+    var fifthRowThirdCulmnFirstStrataCube: ModelEntity?
+    var fifthRowFourthCulmnFirstStrataCube: ModelEntity?
+    var fifthRowFifthCulmnFirstStrataCube: ModelEntity?
+
+    
+    // 2Strata
+    // 1Row
+    var firstRowFirstCulmnSecondStrataCube: ModelEntity?
+    var firstRowSecondCulmnSecondStrataCube: ModelEntity?
+    var firstRowThirdCulmnSecondStrataCube: ModelEntity?
+    var firstRowFourthCulmnSecondStrataCube: ModelEntity?
+    var firstRowFifthCulmnSecondStrataCube: ModelEntity?
+    // 2Row
+    var secondRowFirstCulmnSecondStrataCube: ModelEntity?
+    var secondRowSecondCulmnSecondStrataCube: ModelEntity?
+    var secondRowThirdCulmnSecondStrataCube: ModelEntity?
+    var secondRowFourthCulmnSecondStrataCube: ModelEntity?
+    var secondRowFifthCulmnSecondStrataCube: ModelEntity?
+    // 3Row
+    var thirdRowFirstCulmnSecondStrataCube: ModelEntity?
+    var thirdRowSecondCulmnSecondStrataCube: ModelEntity?
+    var thirdRowThirdCulmnSecondStrataCube: ModelEntity?
+    var thirdRowFourthCulmnSecondStrataCube: ModelEntity?
+    var thirdRowFifthCulmnSecondStrataCube: ModelEntity?
+    // 4Row
+    var fourthRowFirstCulmnSecondStrataCube: ModelEntity?
+    var fourthRowSecondCulmnSecondStrataCube: ModelEntity?
+    var fourthRowThirdCulmnSecondStrataCube: ModelEntity?
+    var fourthRowFourthCulmnSecondStrataCube: ModelEntity?
+    var fourthRowFifthCulmnSecondStrataCube: ModelEntity?
+    // 5Row
+    var fifthRowFirstCulmnSecondStrataCube: ModelEntity?
+    var fifthRowSecondCulmnSecondStrataCube: ModelEntity?
+    var fifthRowThirdCulmnSecondStrataCube: ModelEntity?
+    var fifthRowFourthCulmnSecondStrataCube: ModelEntity?
+    var fifthRowFifthCulmnSecondStrataCube: ModelEntity?
+
+    
+    
+    // 3Strata
+    // 1Row
+    var firstRowFirstCulmnThirdStrataCube: ModelEntity?
+    var firstRowSecondCulmnThirdStrataCube: ModelEntity?
+    var firstRowThirdCulmnThirdStrataCube: ModelEntity?
+    var firstRowFourthCulmnThirdStrataCube: ModelEntity?
+    var firstRowFifthCulmnThirdStrataCube: ModelEntity?
+    // 2Row
+    var secondRowFirstCulmnThirdStrataCube: ModelEntity?
+    var secondRowSecondCulmnThirdStrataCube: ModelEntity?
+    var secondRowThirdCulmnThirdStrataCube: ModelEntity?
+    var secondRowFourthCulmnThirdStrataCube: ModelEntity?
+    var secondRowFifthCulmnThirdStrataCube: ModelEntity?
+    // 3Row
+    var thirdRowFirstCulmnThirdStrataCube: ModelEntity?
+    var thirdRowSecondCulmnThirdStrataCube: ModelEntity?
+    var thirdRowThirdCulmnThirdStrataCube: ModelEntity?
+    var thirdRowFourthCulmnThirdStrataCube: ModelEntity?
+    var thirdRowFifthCulmnThirdStrataCube: ModelEntity?
+    // 4Row
+    var fourthRowFirstCulmnThirdStrataCube: ModelEntity?
+    var fourthRowSecondCulmnThirdStrataCube: ModelEntity?
+    var fourthRowThirdCulmnThirdStrataCube: ModelEntity?
+    var fourthRowFourthCulmnThirdStrataCube: ModelEntity?
+    var fourthRowFifthCulmnThirdStrataCube: ModelEntity?
+    // 5Row
+    var fifthRowFirstCulmnThirdStrataCube: ModelEntity?
+    var fifthRowSecondCulmnThirdStrataCube: ModelEntity?
+    var fifthRowThirdCulmnThirdStrataCube: ModelEntity?
+    var fifthRowFourthCulmnThirdStrataCube: ModelEntity?
+    var fifthRowFifthCulmnThirdStrataCube: ModelEntity?
+
+    
+    
+    // 4Strata
+    // 1Row
+    var firstRowFirstCulmnFourthStrataCube: ModelEntity?
+    var firstRowSecondCulmnFourthStrataCube: ModelEntity?
+    var firstRowThirdCulmnFourthStrataCube: ModelEntity?
+    var firstRowFourthCulmnFourthStrataCube: ModelEntity?
+    var firstRowFifthCulmnFourthStrataCube: ModelEntity?
+    // 2Row
+    var secondRowFirstCulmnFourthStrataCube: ModelEntity?
+    var secondRowSecondCulmnFourthStrataCube: ModelEntity?
+    var secondRowThirdCulmnFourthStrataCube: ModelEntity?
+    var secondRowFourthCulmnFourthStrataCube: ModelEntity?
+    var secondRowFifthCulmnFourthStrataCube: ModelEntity?
+    // 3Row
+    var thirdRowFirstCulmnFourthStrataCube: ModelEntity?
+    var thirdRowSecondCulmnFourthStrataCube: ModelEntity?
+    var thirdRowThirdCulmnFourthStrataCube: ModelEntity?
+    var thirdRowFourthCulmnFourthStrataCube: ModelEntity?
+    var thirdRowFifthCulmnFourthStrataCube: ModelEntity?
+    // 4Row
+    var fourthRowFirstCulmnFourthStrataCube: ModelEntity?
+    var fourthRowSecondCulmnFourthStrataCube: ModelEntity?
+    var fourthRowThirdCulmnFourthStrataCube: ModelEntity?
+    var fourthRowFourthCulmnFourthStrataCube: ModelEntity?
+    var fourthRowFifthCulmnFourthStrataCube: ModelEntity?
+    // 5Row
+    var fifthRowFirstCulmnFourthStrataCube: ModelEntity?
+    var fifthRowSecondCulmnFourthStrataCube: ModelEntity?
+    var fifthRowThirdCulmnFourthStrataCube: ModelEntity?
+    var fifthRowFourthCulmnFourthStrataCube: ModelEntity?
+    var fifthRowFifthCulmnFourthStrataCube: ModelEntity?
+
+    // 5Strata
+    // 1Row
+    var firstRowFirstCulmnFifthStrataCube: ModelEntity?
+    var firstRowSecondCulmnFifthStrataCube: ModelEntity?
+    var firstRowThirdCulmnFifthStrataCube: ModelEntity?
+    var firstRowFourthCulmnFifthStrataCube: ModelEntity?
+    var firstRowFifthCulmnFifthStrataCube: ModelEntity?
+    // 2Row
+    var secondRowFirstCulmnFifthStrataCube: ModelEntity?
+    var secondRowSecondCulmnFifthStrataCube: ModelEntity?
+    var secondRowThirdCulmnFifthStrataCube: ModelEntity?
+    var secondRowFourthCulmnFifthStrataCube: ModelEntity?
+    var secondRowFifthCulmnFifthStrataCube: ModelEntity?
+    // 3Row
+    var thirdRowFirstCulmnFifthStrataCube: ModelEntity?
+    var thirdRowSecondCulmnFifthStrataCube: ModelEntity?
+    var thirdRowThirdCulmnFifthStrataCube: ModelEntity?
+    var thirdRowFourthCulmnFifthStrataCube: ModelEntity?
+    var thirdRowFifthCulmnFifthStrataCube: ModelEntity?
+    // 4Row
+    var fourthRowFirstCulmnFifthStrataCube: ModelEntity?
+    var fourthRowSecondCulmnFifthStrataCube: ModelEntity?
+    var fourthRowThirdCulmnFifthStrataCube: ModelEntity?
+    var fourthRowFourthCulmnFifthStrataCube: ModelEntity?
+    var fourthRowFifthCulmnFifthStrataCube: ModelEntity?
+    // 5Row
+    var fifthRowFirstCulmnFifthStrataCube: ModelEntity?
+    var fifthRowSecondCulmnFifthStrataCube: ModelEntity?
+    var fifthRowThirdCulmnFifthStrataCube: ModelEntity?
+    var fifthRowFourthCulmnFifthStrataCube: ModelEntity?
+    var fifthRowFifthCulmnFifthStrataCube: ModelEntity?
+    
     var life: Int = 100
     var speed: Int = 0
     var point: Int = 0
@@ -68,22 +235,10 @@ class HomeViewController: UIViewController {
         worldAnchor = AnchorEntity(world: [0, 0, 0])
         arView.scene.addAnchor(worldAnchor!)
         
+        // コリジョンの設定
         collisionBegan = arView.scene.subscribe(to: CollisionEvents.Began.self, onCollisionBegan(_:))
     
-//        arView.scene.subscribe(to: CollisionEvents.Began.self) { event in
-//            if event.entityA.name == "shield" && event.entityB.name == "cube" {
-//                print("ffffffffffffffffffoooooooooooooo")
-//            }
-//
-//            if event.entityA.name == "shield"  {
-//                print("gggggggggggggggggggggg")
-//            }
-//
-//            if  event.entityB.name == "cube" {
-//                print("oooooooooooooo")
-//            }
-//        }
-        
+
     }
     
     
@@ -121,8 +276,6 @@ class HomeViewController: UIViewController {
         // カメラ座標　→ ワールド座標
         let cubePositon = anchor?.convert(position: infrontOfCamera, to: worldAnchor)
         
-//        anchor?.position = simd_make_float3(0, -0.5, -1.5)
-//        anchor?.position = cubePositon!
         
         anchor?.position = infrontOfCamera
         
@@ -130,9 +283,11 @@ class HomeViewController: UIViewController {
         // cube実装
         let mesh = MeshResource.generateBox(size: [0.09, 0.09, 0.09])
         let material = SimpleMaterial(color: .cyan, isMetallic: false)
-        let cube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFifthCulmnFifthStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFifthCulmnFifthStrataCube?.name = "cube"
+        firstRowFifthCulmnFifthStrataCube?.attackValue = 50
         
-        anchor?.addChild(cube)
+        anchor?.addChild(firstRowFifthCulmnFifthStrataCube!)
         // 追加
         arView.scene.addAnchor(anchor!)
         
@@ -174,61 +329,49 @@ class HomeViewController: UIViewController {
         let length = size + size / 5
         let mesh = MeshResource.generateBox(size: [size, size, size])
         let material = SimpleMaterial(color: .cyan.withAlphaComponent(0.9), isMetallic: false)
-        
-//        let material2 = SimpleMaterial(color: .red, isMetallic: false)
-//        let center = ModelEntity(mesh: mesh, materials: [material2])
-//        center.position = anchor!.position
+    
         
         // 1
         
-        let firstCube1 = ModelEntity(mesh: mesh, materials: [material])
-        firstCube1.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        firstRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
         
-        let secondCube1 = ModelEntity(mesh: mesh, materials: [material])
-        secondCube1.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        firstRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
         
         
-        let thirdCube1 = ModelEntity(mesh: mesh, materials: [material])
-        thirdCube1.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        firstRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
         
-        let fourthCube1 = ModelEntity(mesh: mesh, materials: [material])
-        fourthCube1.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        firstRowFirstCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnFourthStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
         
      
         // 2
-        let firstCube2 = ModelEntity(mesh: mesh, materials: [material])
-        firstCube2.position =  simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        secondRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnFirstStrataCube?.position =  simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
         
-        let secondCube2 = ModelEntity(mesh: mesh, materials: [material])
-        secondCube2.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        secondRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
         
-        let thirdCube2 = ModelEntity(mesh: mesh, materials: [material])
-        thirdCube2.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+        secondRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
         
-        let fourthCube2 = ModelEntity(mesh: mesh, materials: [material])
-        fourthCube2.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+       secondRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFourthCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
         
-//        anchor!.addChild(center)
+
         
-//        cubeModels.append(firstCube1)
-//        cubeModels.append(secondCube1)
-//        cubeModels.append(thirdCube1)
-//        cubeModels.append(fourthCube1)
-//        cubeModels.append(firstCube2)
-//        cubeModels.append(secondCube2)
-//        cubeModels.append(thirdCube2)
-//        cubeModels.append(fourthCube2)
+        anchor?.addChild(firstRowFirstCulmnFirstStrataCube!)
+        anchor?.addChild(firstRowSecondCulmnFirstStrataCube!)
+        anchor?.addChild(firstRowThirdCulmnFirstStrataCube!)
         
-        anchor?.addChild(firstCube1)
-        anchor?.addChild(secondCube1)
-        anchor?.addChild(thirdCube1)
-        
-        anchor?.addChild(fourthCube1)
+        anchor?.addChild(firstRowFourthCulmnFirstStrataCube!)
          
-        anchor?.addChild(firstCube2)
-        anchor?.addChild(secondCube2)
-        anchor?.addChild(thirdCube2)
-        anchor?.addChild(fourthCube2)
+        anchor?.addChild(secondRowFirstCulmnFirstStrataCube!)
+        anchor?.addChild(secondRowSecondCulmnFirstStrataCube!)
+        anchor?.addChild(secondRowThirdCulmnFirstStrataCube!)
+        anchor?.addChild(secondRowFourthCulmnFirstStrataCube!)
       
         // 追加
         arView.scene.addAnchor(anchor!)
@@ -1434,22 +1577,16 @@ class HomeViewController: UIViewController {
         arView.scene.addAnchor(shieldModel!)
     }
     
-    
+    // 衝突じの処理
     func onCollisionBegan(_ event: CollisionEvents.Began) {
         if event.entityA.name == "shield" && event.entityB.name == "cube" {
                         print("ffffffffffffffffffoooooooooooooo")
-                    }
+        }
         
-                    if event.entityA.name == "shield"  {
-                        print("gggggggggggggggggggggg")
-                    }
-        
-                    if  event.entityB.name == "cube" {
-                        print("oooooooooooooo")
-                    }
-        
+                   
         
     }
+    
     func makeAnchor() {
         // AnchorEntity生成
         let anchor2 = AnchorEntity()
@@ -1867,4 +2004,29 @@ extension float4x4 {
             .init(vector.x, vector.y, vector.z, 1)
         )
     }
+}
+
+extension Entity {
+    // 耐久値
+    var durableValue: Int {
+        get {
+            return self.durableValue
+        }
+        
+        set {
+            self.durableValue += newValue
+        }
+    }
+    
+    // 威力
+    var attackValue: Int {
+        get {
+            return self.attackValue
+        }
+        
+        set {
+            self.attackValue += newValue
+        }
+    }
+    
 }
