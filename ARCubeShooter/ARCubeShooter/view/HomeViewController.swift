@@ -421,139 +421,130 @@ class HomeViewController: UIViewController {
         
         // 1
         
-        let firstCube1 = ModelEntity(mesh: mesh, materials: [material])
-        firstCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        firstRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
         
-        let secondCube1 = ModelEntity(mesh: mesh, materials: [material])
-        secondCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        secondRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnFirstStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), (anchor?.position.z)!)
         
-        let thirdCube1 = ModelEntity(mesh: mesh, materials: [material])
-        thirdCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        thirdRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
         
-        let fourthCube1 = ModelEntity(mesh: mesh, materials: [material])
-        fourthCube1.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, (anchor?.position.z)!)
+        firstRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, (anchor?.position.z)!)
         
-        let fifthCube1 = ModelEntity(mesh: mesh, materials: [material])
-        fifthCube1.position = anchor!.position
+        secondRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnFirstStrataCube?.position = anchor!.position
         
-        let sixthCube1 = ModelEntity(mesh: mesh, materials: [material])
-        sixthCube1.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, (anchor?.position.z)!)
+        thirdRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, (anchor?.position.z)!)
         
-        let seventhCube1 = ModelEntity(mesh: mesh, materials: [material])
-        seventhCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        firstRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
         
-        let eighthCube1 = ModelEntity(mesh: mesh, materials: [material])
-        eighthCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        secondRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnFirstStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), (anchor?.position.z)!)
         
-        let ninethCube1 = ModelEntity(mesh: mesh, materials: [material])
-        ninethCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        thirdRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
         
         // 2
-        let firstCube2 = ModelEntity(mesh: mesh, materials: [material])
-        firstCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        firstRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         
-        let secondCube2 = ModelEntity(mesh: mesh, materials: [material])
-        secondCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        secondRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnSecondStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         
-        let thirdCube2 = ModelEntity(mesh: mesh, materials: [material])
-        thirdCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        thirdRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         
-        let fourthCube2 = ModelEntity(mesh: mesh, materials: [material])
-        fourthCube2.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        firstRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
         
-        let fifthCube2 = ModelEntity(mesh: mesh, materials: [material])
-        fifthCube2.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        secondRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnSecondStrataCube?.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! + length))
         
-        let sixthCube2 = ModelEntity(mesh: mesh, materials: [material])
-        sixthCube2.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        thirdRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
         
-        let seventhCube2 = ModelEntity(mesh: mesh, materials: [material])
-        seventhCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        firstRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         
-        let eighthCube2 = ModelEntity(mesh: mesh, materials: [material])
-        eighthCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        secondRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnSecondStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         
-        let ninethCube2 = ModelEntity(mesh: mesh, materials: [material])
-        ninethCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        thirdRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         
         // 3
-        let firstCube3 = ModelEntity(mesh: mesh, materials: [material])
-        firstCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        firstRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnThirdStrataCube!.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         
-        let secondCube3 = ModelEntity(mesh: mesh, materials: [material])
-        secondCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        secondRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnThirdStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         
-        let thirdCube3 = ModelEntity(mesh: mesh, materials: [material])
-        thirdCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        thirdRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         
-        let fourthCube3 = ModelEntity(mesh: mesh, materials: [material])
-        fourthCube3.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        firstRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
         
-        let fifthCube3 = ModelEntity(mesh: mesh, materials: [material])
-        fifthCube3.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        secondRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnThirdStrataCube?.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! - length))
         
-        let sixthCube3 = ModelEntity(mesh: mesh, materials: [material])
-        sixthCube3.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        thirdRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
         
-        let seventhCube3 = ModelEntity(mesh: mesh, materials: [material])
-        seventhCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        firstRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         
-        let eighthCube3 = ModelEntity(mesh: mesh, materials: [material])
-        eighthCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        secondRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnThirdStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         
-        let ninethCube3 = ModelEntity(mesh: mesh, materials: [material])
-        ninethCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        thirdRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         
         
+     
+        anchor?.addChild(firstRowFirstCulmnFirstStrataCube!)
+        anchor?.addChild(secondRowFirstCulmnFirstStrataCube!)
+        anchor?.addChild(thirdRowFirstCulmnFirstStrataCube!)
+        anchor?.addChild(firstRowSecondCulmnFirstStrataCube!)
+        anchor?.addChild(secondRowSecondCulmnFirstStrataCube!)
+        anchor?.addChild(thirdRowSecondCulmnFirstStrataCube!)
+        anchor?.addChild(firstRowThirdCulmnFirstStrataCube!)
+        anchor?.addChild(secondRowThirdCulmnFirstStrataCube!)
+        anchor?.addChild(thirdRowThirdCulmnFirstStrataCube!)
         
-        // センターキューブ
-//        let cube = ModelEntity(mesh: mesh, materials: [material])
-//        cube.position = anchor!.position
+        anchor?.addChild(firstRowFirstCulmnSecondStrataCube!)
+        anchor?.addChild(secondRowFirstCulmnSecondStrataCube!)
+        anchor?.addChild(thirdRowFirstCulmnSecondStrataCube!)
+        anchor?.addChild(firstRowSecondCulmnSecondStrataCube!)
+        anchor?.addChild(secondRowSecondCulmnSecondStrataCube!)
+        anchor?.addChild(thirdRowSecondCulmnSecondStrataCube!)
+        anchor?.addChild(firstRowThirdCulmnSecondStrataCube!)
+        anchor?.addChild(secondRowThirdCulmnSecondStrataCube!)
+        anchor?.addChild(thirdRowThirdCulmnSecondStrataCube!)
         
-//        centerAnchor.addChild(cube)
-        anchor?.addChild(firstCube1)
-        anchor?.addChild(secondCube1)
-        anchor?.addChild(thirdCube1)
+        anchor?.addChild(firstRowFirstCulmnThirdStrataCube!)
+        anchor?.addChild(secondRowFirstCulmnThirdStrataCube!)
+        anchor?.addChild(thirdRowFirstCulmnThirdStrataCube!)
         
-        anchor?.addChild(fourthCube1)
-        anchor?.addChild(fifthCube1)
-        anchor?.addChild(sixthCube1)
+        anchor?.addChild(firstRowSecondCulmnThirdStrataCube!)
+        anchor?.addChild(secondRowSecondCulmnThirdStrataCube!)
+        anchor?.addChild(thirdRowSecondCulmnThirdStrataCube!)
         
-        anchor?.addChild(seventhCube1)
-        anchor?.addChild(eighthCube1)
-        anchor?.addChild(ninethCube1)
-        
-        anchor?.addChild(firstCube2)
-        anchor?.addChild(secondCube2)
-        anchor?.addChild(thirdCube2)
-        
-        anchor?.addChild(fourthCube2)
-        anchor?.addChild(fifthCube2)
-        anchor?.addChild(sixthCube2)
-        
-        anchor?.addChild(seventhCube2)
-        anchor?.addChild(eighthCube2)
-        anchor?.addChild(ninethCube2)
-        
-        anchor?.addChild(firstCube3)
-        anchor?.addChild(secondCube3)
-        anchor?.addChild(thirdCube3)
-        
-        anchor?.addChild(fourthCube3)
-        anchor?.addChild(fifthCube3)
-        anchor?.addChild(sixthCube3)
-        
-        anchor?.addChild(seventhCube3)
-        anchor?.addChild(eighthCube3)
-        anchor?.addChild(ninethCube3)
+        anchor?.addChild(firstRowThirdCulmnThirdStrataCube!)
+        anchor?.addChild(secondRowThirdCulmnThirdStrataCube!)
+        anchor?.addChild(thirdRowThirdCulmnThirdStrataCube!)
         
         // 追加
         arView.scene.addAnchor(anchor!)
         
         // 発射処理
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            let anime = firstCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+//            let anime = firstCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
+//        }
         
     }
     
@@ -597,224 +588,266 @@ class HomeViewController: UIViewController {
        
         // row - column - Strata(行 - 列 - 層)
         
-        // 1行目
+        // 1Strata
         // 1-1-1
-        let firstRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFirstCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 1-1-2
-        let firstRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFirstCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
-        // 1-1-3
-        let firstRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFirstCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
-        // 1-1-4
-        let firstRowFirstCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFirstCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
+        firstRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
+        secondRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
+        // 3-1-1
+        thirdRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
+        // 4-1-1
+        fourthRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
        
-        
         // 1-2-1
-        let firstRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowSecondCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 1-2-2
-        let firstRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowSecondCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
-        // 1-2-3
-        let firstRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowSecondCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
-        // 1-2-4
-        let firstRowSecondCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowSecondCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2 * 3))
+        firstRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
+        // 2-2-1
+        secondRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
+        // 3-2-1
+        thirdRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
+        // 4-2-1
+        fourthRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
        
-        
         // 1-3-1
-        let firstRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowThirdCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 1-3-2
-        let firstRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowThirdCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
-        // 1-3-3
-        let firstRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowThirdCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
-        // 1-3-4
-        let firstRowThirdCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowThirdCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2 * 3))
-       
+        firstRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
+        // 2-3-1
+        secondRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
+        // 3-3-1
+        thirdRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
+        // 4-3-1
+        fourthRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
         
         // 1-4-1
-        let firstRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFourthCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! + length / 2 * 3))
+        firstRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFourthCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! + length / 2 * 3))
+        // 2-4-1
+        secondRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFourthCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
+        // 3-4-1
+        thirdRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFourthCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
+        // 4-4-1
+        fourthRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowFourthCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! +  length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
+        
+        // 2Strata
+        // 1-1-2
+        firstRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        // 2-1-2
+        secondRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        // 3-1-2
+        thirdRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        // 4-1-2
+        fourthRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        
+        // 1-2-2
+        firstRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        // 2-2-2
+        secondRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        // 3-2-2
+        thirdRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        // 4-2-2
+        fourthRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
+        
+        // 1-3-2
+        firstRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+        // 2-3-2
+        secondRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+        // 3-3-2
+        thirdRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
+        // 4-3-2
+        fourthRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
         // 1-4-2
-        let firstRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFourthCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! + length / 2))
+        firstRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFourthCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! + length / 2))
+        // 2-4-2
+        secondRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFourthCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        // 3-4-2
+        thirdRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFourthCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        // 4-4-2
+        fourthRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowFourthCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! +  length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        
+        // 3Strata
+        // 1-1-3
+        firstRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        // 2-1-3
+        secondRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        // 3-1-3
+        thirdRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        // 4-1-3
+        fourthRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        // 1-2-3
+        firstRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        // 2-2-3
+        secondRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        // 3-2-3
+        thirdRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        // 4-2-3
+        fourthRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        
+        // 1-3-3
+        firstRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        // 2-3-3
+        secondRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        // 3-3-3
+        thirdRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        // 4-3-3
+        fourthRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        fourthRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
         // 1-4-3
-        let firstRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFourthCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! - length / 2))
+        firstRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFourthCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! - length / 2))
+        // 2-4-3
+        secondRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        secondRowFourthCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        // 3-4-3
+        thirdRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        thirdRowFourthCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        // 4Strata
+        // 1-1-4
+        firstRowFirstCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFirstCulmnFourthStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
+        // 1-2-4
+        firstRowSecondCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowSecondCulmnFourthStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2 * 3))
+        // 1-3-4
+        firstRowThirdCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowThirdCulmnFourthStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2 * 3))
         // 1-4-4
-        let firstRowFourthCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        firstRowFourthCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! - length / 2 * 3))
+        firstRowFourthCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
+        firstRowFourthCulmnFourthStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3),  ((anchor?.position.z)! - length / 2 * 3))
        
         
         // 2行目
         // 2-1-1
-        let secondRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowFirstCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 2-1-2
-        let secondRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowFirstCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
-        // 2-1-3
-        let secondRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowFirstCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        
+       
         // 2-1-4
         let secondRowFirstCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowFirstCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
        
         
         
-        // 2-2-1
-        let secondRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowSecondCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 2-2-2
-        let secondRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowSecondCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
-        // 2-2-3
-        let secondRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowSecondCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        
+        
         // 2-2-4
         let secondRowSecondCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowSecondCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2 * 3))
         
         
-        // 2-3-1
-        let secondRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowThirdCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 2-3-2
-        let secondRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowThirdCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
-        // 2-3-3
-        let secondRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowThirdCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
+       
+        
         // 2-3-4
         let secondRowThirdCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowThirdCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2 * 3))
        
         
-        // 2-4-1
-        let secondRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowFourthCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 2-4-2
-        let secondRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowFourthCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2))
-        // 2-4-3
-        let secondRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        secondRowFourthCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        
         // 2-4-4
         let secondRowFourthCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowFourthCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! - length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
        
         
         // 3行目
-        // 3-1-1
-        let thirdRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowFirstCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 3-1-2
-        let thirdRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowFirstCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
-        // 3-1-3
-        let thirdRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowFirstCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        
+        
         // 3-1-4
         let thirdRowFirstCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowFirstCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
        
         
-        // 3-2-1
-        let thirdRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowSecondCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 3-2-2
-        let thirdRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowSecondCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
-        // 3-2-3
-        let thirdRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowSecondCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        
+        
+        
         // 3-2-4
         let thirdRowSecondCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowSecondCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2 * 3))
        
-        // 3-3-1
-        let thirdRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowThirdCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 3-3-2
-        let thirdRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowThirdCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2))
-        // 3-3-3
-        let thirdRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowThirdCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
+        
+        
         // 3-3-4
         let thirdRowThirdCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowThirdCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2 * 3))
        
         
-        // 3-4-1
-        let thirdRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowFourthCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 3-4-2
-        let thirdRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowFourthCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2))
-        // 3-4-3
-        let thirdRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        thirdRowFourthCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        
+        
         // 3-4-4
         let thirdRowFourthCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowFourthCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
        
         // 4行目
-        // 4-1-1
-        let fourthRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowFirstCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 4-1-2
-        let fourthRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowFirstCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! + length / 2))
-        // 4-1-3
-        let fourthRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowFirstCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2))
+        
+        
+        
         // 4-1-4
         let fourthRowFirstCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         fourthRowFirstCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2 * 3), ((anchor?.position.z)! - length / 2 * 3))
        
         
-        // 4-2-1
-        let fourthRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowSecondCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 4-2-2
-        let fourthRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowSecondCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! + length / 2))
-        // 4-2-3
-        let fourthRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowSecondCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2))
+        
+       
+        
         // 4-2-4
         let fourthRowSecondCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         fourthRowSecondCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! + length / 2), ((anchor?.position.z)! - length / 2 * 3))
        
     
-        // 4-3-1
-        let fourthRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowThirdCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! + length / 2 * 3))
-        // 4-3-2
-        let fourthRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowThirdCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
-        // 4-3-3
-        let fourthRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowThirdCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2))
+        
+        
+        
         // 4-3-4
         let fourthRowThirdCulmnFourthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         fourthRowThirdCulmnFourthStrataCube.position = simd_make_float3(((anchor?.position.x)! + length / 2 * 3), ((anchor?.position.y)! - length / 2), ((anchor?.position.z)! - length / 2 * 3))
         
-        // 4-4-1
-        let fourthRowFourthCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowFourthCulmnFirstStrataCube.position = simd_make_float3(((anchor?.position.x)! +  length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2 * 3))
-        // 4-4-2
-        let fourthRowFourthCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
-        fourthRowFourthCulmnSecondStrataCube.position = simd_make_float3(((anchor?.position.x)! +  length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! + length / 2))
+        
+        
         // 4-4-3
         let fourthRowFourthCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         fourthRowFourthCulmnThirdStrataCube.position = simd_make_float3(((anchor?.position.x)! +  length / 2 * 3), ((anchor?.position.y)! - length / 2 * 3), ((anchor?.position.z)! - length / 2))
