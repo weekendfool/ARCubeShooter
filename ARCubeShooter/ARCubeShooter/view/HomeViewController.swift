@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
 //    var cubeModel: ModelEntity?
     var worldAnchor: AnchorEntity?
 //    var cubeModels: [ModelEntity] = []
-    var shieldModel: AnchorEntity?
+    var shieldAnchor: AnchorEntity?
     
     
     // cubeEntity
@@ -195,6 +195,8 @@ class HomeViewController: UIViewController {
     var fifthRowFourthCulmnFifthStrataCube: ModelEntity?
     var fifthRowFifthCulmnFifthStrataCube: ModelEntity?
     
+    var shieldModel: ModelEntity?
+    
     var life: Int = 100
     var speed: Int = 0
     var point: Int = 0
@@ -210,11 +212,6 @@ class HomeViewController: UIViewController {
         
         setupAR()
         
-//        makeCube()
-//        makeSixteenCubes()
-//        makeShield()
-        
-    
         
     }
     
@@ -244,25 +241,196 @@ class HomeViewController: UIViewController {
 
     }
     
-    
-    
-    
-    func makeCube() {
+    func setupModelEntity() {
         
-        // AnchorEntity生成
-        anchor = AnchorEntity()
-        anchor?.position = simd_make_float3(0, -0.5, -1.5)
         
-        // cube実装
-        let mesh = MeshResource.generateBox(size: [0.9, 0.9, 0.9])
-        let material = SimpleMaterial(color: .cyan, isMetallic: false)
-        let cube = ModelEntity(mesh: mesh, materials: [material])
+        // cubeEntity
+        // 1Strata
+        // 1Row
+        firstRowFirstCulmnFirstStrataCube?.name = "cube"
+        firstRowSecondCulmnFirstStrataCube?.name = "cube"
+        firstRowThirdCulmnFirstStrataCube?.name = "cube"
+        firstRowFourthCulmnFirstStrataCube?.name = "cube"
+        firstRowFifthCulmnFirstStrataCube?.name = "cube"
+        // 2Row
+        secondRowFirstCulmnFirstStrataCube?.name = "cube"
+        secondRowSecondCulmnFirstStrataCube?.name = "cube"
+        secondRowThirdCulmnFirstStrataCube?.name = "cube"
+        secondRowFourthCulmnFirstStrataCube?.name = "cube"
+        secondRowFifthCulmnFirstStrataCube?.name = "cube"
+        // 3Row
+        thirdRowFirstCulmnFirstStrataCube?.name = "cube"
+        thirdRowSecondCulmnFirstStrataCube?.name = "cube"
+        thirdRowThirdCulmnFirstStrataCube?.name = "cube"
+        thirdRowFourthCulmnFirstStrataCube?.name = "cube"
+        thirdRowFifthCulmnFirstStrataCube?.name = "cube"
+        // 4Row
+        fourthRowFirstCulmnFirstStrataCube?.name = "cube"
+        fourthRowSecondCulmnFirstStrataCube?.name = "cube"
+        fourthRowThirdCulmnFirstStrataCube?.name = "cube"
+        fourthRowFourthCulmnFirstStrataCube?.name = "cube"
+        fourthRowFifthCulmnFirstStrataCube?.name = "cube"
+        // 5Row
+        fifthRowFirstCulmnFirstStrataCube?.name = "cube"
+        fifthRowSecondCulmnFirstStrataCube?.name = "cube"
+        fifthRowThirdCulmnFirstStrataCube?.name = "cube"
+        fifthRowFourthCulmnFirstStrataCube?.name = "cube"
+        fifthRowFifthCulmnFirstStrataCube?.name = "cube"
+
         
-        anchor?.addChild(cube)
-        // 追加
-        arView.scene.addAnchor(anchor!)
+        // 2Strata
+        // 1Row
+        firstRowFirstCulmnSecondStrataCube?.name = "cube"
+        firstRowSecondCulmnSecondStrataCube?.name = "cube"
+        firstRowThirdCulmnSecondStrataCube?.name = "cube"
+        firstRowFourthCulmnSecondStrataCube?.name = "cube"
+        firstRowFifthCulmnSecondStrataCube?.name = "cube"
+        // 2Row
+        secondRowFirstCulmnSecondStrataCube?.name = "cube"
+        secondRowSecondCulmnSecondStrataCube?.name = "cube"
+        secondRowThirdCulmnSecondStrataCube?.name = "cube"
+        secondRowFourthCulmnSecondStrataCube?.name = "cube"
+        secondRowFifthCulmnSecondStrataCube?.name = "cube"
+        // 3Row
+        thirdRowFirstCulmnSecondStrataCube?.name = "cube"
+        thirdRowSecondCulmnSecondStrataCube?.name = "cube"
+        thirdRowThirdCulmnSecondStrataCube?.name = "cube"
+        thirdRowFourthCulmnSecondStrataCube?.name = "cube"
+        thirdRowFifthCulmnSecondStrataCube?.name = "cube"
+        // 4Row
+        fourthRowFirstCulmnSecondStrataCube?.name = "cube"
+        fourthRowSecondCulmnSecondStrataCube?.name = "cube"
+        fourthRowThirdCulmnSecondStrataCube?.name = "cube"
+        fourthRowFourthCulmnSecondStrataCube?.name = "cube"
+        fourthRowFifthCulmnSecondStrataCube?.name = "cube"
+        // 5Row
+        fifthRowFirstCulmnSecondStrataCube?.name = "cube"
+        fifthRowSecondCulmnSecondStrataCube?.name = "cube"
+        fifthRowThirdCulmnSecondStrataCube?.name = "cube"
+        fifthRowFourthCulmnSecondStrataCube?.name = "cube"
+        fifthRowFifthCulmnSecondStrataCube?.name = "cube"
+
+        
+        
+        // 3Strata
+        // 1Row
+        firstRowFirstCulmnThirdStrataCube?.name = "cube"
+        firstRowSecondCulmnThirdStrataCube?.name = "cube"
+        firstRowThirdCulmnThirdStrataCube?.name = "cube"
+        firstRowFourthCulmnThirdStrataCube?.name = "cube"
+        firstRowFifthCulmnThirdStrataCube?.name = "cube"
+        // 2Row
+        secondRowFirstCulmnThirdStrataCube?.name = "cube"
+        secondRowSecondCulmnThirdStrataCube?.name = "cube"
+        secondRowThirdCulmnThirdStrataCube?.name = "cube"
+        secondRowFourthCulmnThirdStrataCube?.name = "cube"
+        secondRowFifthCulmnThirdStrataCube?.name = "cube"
+        // 3Row
+        thirdRowFirstCulmnThirdStrataCube?.name = "cube"
+        thirdRowSecondCulmnThirdStrataCube?.name = "cube"
+        thirdRowThirdCulmnThirdStrataCube?.name = "cube"
+        thirdRowFourthCulmnThirdStrataCube?.name = "cube"
+        thirdRowFifthCulmnThirdStrataCube?.name = "cube"
+        // 4Row
+        fourthRowFirstCulmnThirdStrataCube?.name = "cube"
+        fourthRowSecondCulmnThirdStrataCube?.name = "cube"
+        fourthRowThirdCulmnThirdStrataCube?.name = "cube"
+        fourthRowFourthCulmnThirdStrataCube?.name = "cube"
+        fourthRowFifthCulmnThirdStrataCube?.name = "cube"
+        // 5Row
+        fifthRowFirstCulmnThirdStrataCube?.name = "cube"
+        fifthRowSecondCulmnThirdStrataCube?.name = "cube"
+        fifthRowThirdCulmnThirdStrataCube?.name = "cube"
+        fifthRowFourthCulmnThirdStrataCube?.name = "cube"
+        fifthRowFifthCulmnThirdStrataCube?.name = "cube"
+
+        
+        
+        // 4Strata
+        // 1Row
+        firstRowFirstCulmnFourthStrataCube?.name = "cube"
+        firstRowSecondCulmnFourthStrataCube?.name = "cube"
+        firstRowThirdCulmnFourthStrataCube?.name = "cube"
+        firstRowFourthCulmnFourthStrataCube?.name = "cube"
+        firstRowFifthCulmnFourthStrataCube?.name = "cube"
+        // 2Row
+        secondRowFirstCulmnFourthStrataCube?.name = "cube"
+        secondRowSecondCulmnFourthStrataCube?.name = "cube"
+        secondRowThirdCulmnFourthStrataCube?.name = "cube"
+        secondRowFourthCulmnFourthStrataCube?.name = "cube"
+        secondRowFifthCulmnFourthStrataCube?.name = "cube"
+        // 3Row
+        thirdRowFirstCulmnFourthStrataCube?.name = "cube"
+        thirdRowSecondCulmnFourthStrataCube?.name = "cube"
+        thirdRowThirdCulmnFourthStrataCube?.name = "cube"
+        thirdRowFourthCulmnFourthStrataCube?.name = "cube"
+        thirdRowFifthCulmnFourthStrataCube?.name = "cube"
+        // 4Row
+        fourthRowFirstCulmnFourthStrataCube?.name = "cube"
+        fourthRowSecondCulmnFourthStrataCube?.name = "cube"
+        fourthRowThirdCulmnFourthStrataCube?.name = "cube"
+        fourthRowFourthCulmnFourthStrataCube?.name = "cube"
+        fourthRowFifthCulmnFourthStrataCube?.name = "cube"
+        // 5Row
+        fifthRowFirstCulmnFourthStrataCube?.name = "cube"
+        fifthRowSecondCulmnFourthStrataCube?.name = "cube"
+        fifthRowThirdCulmnFourthStrataCube?.name = "cube"
+        fifthRowFourthCulmnFourthStrataCube?.name = "cube"
+        fifthRowFifthCulmnFourthStrataCube?.name = "cube"
+
+        // 5Strata
+        // 1Row
+        firstRowFirstCulmnFifthStrataCube?.name = "cube"
+        firstRowSecondCulmnFifthStrataCube?.name = "cube"
+        firstRowThirdCulmnFifthStrataCube?.name = "cube"
+        firstRowFourthCulmnFifthStrataCube?.name = "cube"
+        firstRowFifthCulmnFifthStrataCube?.name = "cube"
+        // 2Row
+        secondRowFirstCulmnFifthStrataCube?.name = "cube"
+        secondRowSecondCulmnFifthStrataCube?.name = "cube"
+        secondRowThirdCulmnFifthStrataCube?.name = "cube"
+        secondRowFourthCulmnFifthStrataCube?.name = "cube"
+        secondRowFifthCulmnFifthStrataCube?.name = "cube"
+        // 3Row
+        thirdRowFirstCulmnFifthStrataCube?.name = "cube"
+        thirdRowSecondCulmnFifthStrataCube?.name = "cube"
+        thirdRowThirdCulmnFifthStrataCube?.name = "cube"
+        thirdRowFourthCulmnFifthStrataCube?.name = "cube"
+        thirdRowFifthCulmnFifthStrataCube?.name = "cube"
+        // 4Row
+        fourthRowFirstCulmnFifthStrataCube?.name = "cube"
+        fourthRowSecondCulmnFifthStrataCube?.name = "cube"
+        fourthRowThirdCulmnFifthStrataCube?.name = "cube"
+        fourthRowFourthCulmnFifthStrataCube?.name = "cube"
+        fourthRowFifthCulmnFifthStrataCube?.name = "cube"
+        // 5Row
+        fifthRowFirstCulmnFifthStrataCube?.name = "cube"
+        fifthRowSecondCulmnFifthStrataCube?.name = "cube"
+        fifthRowThirdCulmnFifthStrataCube?.name = "cube"
+        fifthRowFourthCulmnFifthStrataCube?.name = "cube"
+        fifthRowFifthCulmnFifthStrataCube?.name = "cube"
+        
+        shieldModel?.name = "shield"
         
     }
+    
+ 
+//    func makeCube() {
+//
+//        // AnchorEntity生成
+//        anchor = AnchorEntity()
+//        anchor?.position = simd_make_float3(0, -0.5, -1.5)
+//
+//        // cube実装
+//        let mesh = MeshResource.generateBox(size: [0.9, 0.9, 0.9])
+//        let material = SimpleMaterial(color: .cyan, isMetallic: false)
+//        let cube = ModelEntity(mesh: mesh, materials: [material])
+//
+//        anchor?.addChild(cube)
+//        // 追加
+//        arView.scene.addAnchor(anchor!)
+//
+//    }
     
     // キューブ生成：一個
     func makeACube() {
@@ -1535,38 +1703,38 @@ class HomeViewController: UIViewController {
     func makeShield() {
         
         // 初期化
-        if let shieldModel = self.shieldModel {
-            self.shieldModel = nil
-            shieldModel.removeFromParent()
+        if let shieldAnchor = self.shieldAnchor {
+            self.shieldAnchor = nil
+            shieldAnchor.removeFromParent()
         }
         // AnchorEntity生成
-        shieldModel = AnchorEntity()
+        shieldAnchor = AnchorEntity()
         // カメラ座標
         let transform = arView.cameraTransform.translation
         let infrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 1.0)
         
         let goalInfrontOfCamera = SIMD3<Float>(x: transform.x, y: transform.y, z: transform.z - 2.0)
         // カメラ座標　→ ワールド座標
-        let cubePositon = shieldModel?.convert(position: goalInfrontOfCamera, to: worldAnchor)
+        let cubePositon = shieldAnchor?.convert(position: goalInfrontOfCamera, to: worldAnchor)
         
         let movePosition = float4x4.init(translation: cubePositon!)
       
-        shieldModel?.position = infrontOfCamera
+        shieldAnchor?.position = infrontOfCamera
         
         
         // cube実装
         let mesh = MeshResource.generateBox(size: [0.5, 0.9, 0.009])
         let material = SimpleMaterial(color: .magenta.withAlphaComponent(0.5), isMetallic: false)
-        let shield = ModelEntity(mesh: mesh, materials: [material])
+        shieldModel = ModelEntity(mesh: mesh, materials: [material])
         
         
-        shield.name = "shield"
-        shield.generateCollisionShapes(recursive: false)
+        shieldModel?.name = "shield"
+        shieldModel?.generateCollisionShapes(recursive: false)
         
         
-        shieldModel?.addChild(shield)
+        shieldAnchor?.addChild(shieldModel!)
         // 追加
-        arView.scene.addAnchor(shieldModel!)
+        arView.scene.addAnchor(shieldAnchor!)
     }
     
     // 衝突じの処理
@@ -2021,4 +2189,34 @@ extension Entity {
         }
     }
     
+    // uuid
+    var type: cubeType {
+        
+        get {
+            return self.type
+        }
+        
+        set {
+            self.type = newValue
+        }
+    }
+    
+    var uuid: UUID {
+        
+        get {
+            return self.uuid
+        }
+        
+        set {
+            self.uuid = newValue
+        }
+    }
+    
+}
+
+enum cubeType {
+    case one
+    case four
+    case sixteen
+    case twentyFive
 }
