@@ -212,7 +212,7 @@ class HomeViewController: UIViewController {
         
         setupAR()
         
-        
+        setupModelEntity()
     }
     
     
@@ -456,7 +456,7 @@ class HomeViewController: UIViewController {
         let material = SimpleMaterial(color: .cyan, isMetallic: false)
         firstRowFifthCulmnFifthStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowFifthCulmnFifthStrataCube?.name = "cube"
-        firstRowFifthCulmnFifthStrataCube?.attackValue = 50
+        firstRowFifthCulmnFifthStrataCube.durableValue = 1
         
         anchor?.addChild(firstRowFifthCulmnFifthStrataCube!)
         // 追加
@@ -594,87 +594,113 @@ class HomeViewController: UIViewController {
         
         firstRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        firstRowFirstCulmnFirstStrataCube?.durableValue = 1
         
         secondRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowFirstCulmnFirstStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        secondRowFirstCulmnFirstStrataCube?.durableValue = 1
         
         thirdRowFirstCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowFirstCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
+        thirdRowFirstCulmnFirstStrataCube?.durableValue = 1
         
         firstRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, (anchor?.position.z)!)
+        firstRowSecondCulmnFirstStrataCube?.durableValue = 1
         
         secondRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowSecondCulmnFirstStrataCube?.position = anchor!.position
+        secondRowSecondCulmnFirstStrataCube?.durableValue = 1
         
         thirdRowSecondCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowSecondCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, (anchor?.position.z)!)
+        thirdRowSecondCulmnFirstStrataCube?.durableValue = 1
         
         firstRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        firstRowThirdCulmnFirstStrataCube?.durableValue = 1
         
         secondRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowThirdCulmnFirstStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        secondRowThirdCulmnFirstStrataCube?.durableValue = 1
         
         thirdRowThirdCulmnFirstStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowThirdCulmnFirstStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
+        thirdRowThirdCulmnFirstStrataCube?.durableValue = 1
         
         // 2
         firstRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        firstRowFirstCulmnSecondStrataCube?.durableValue = 1
         
         secondRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowFirstCulmnSecondStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        secondRowFirstCulmnSecondStrataCube?.durableValue = 1
         
         thirdRowFirstCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowFirstCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
+        thirdRowFirstCulmnSecondStrataCube?.durableValue = 1
         
         firstRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        firstRowSecondCulmnSecondStrataCube?.durableValue = 1
         
         secondRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowSecondCulmnSecondStrataCube?.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        secondRowSecondCulmnSecondStrataCube?.durableValue = 1
         
         thirdRowSecondCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowSecondCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
+        thirdRowSecondCulmnSecondStrataCube?.durableValue = 1
         
         firstRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        firstRowThirdCulmnSecondStrataCube?.durableValue = 1
         
         secondRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowThirdCulmnSecondStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        secondRowThirdCulmnSecondStrataCube?.durableValue = 1
         
         thirdRowThirdCulmnSecondStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowThirdCulmnSecondStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
+        thirdRowThirdCulmnSecondStrataCube?.durableValue = 1
         
         // 3
         firstRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowFirstCulmnThirdStrataCube!.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        firstRowFirstCulmnThirdStrataCube?.durableValue = 1
         
         secondRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowFirstCulmnThirdStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        firstRowFirstCulmnFirstStrataCube?.durableValue = 1
         
         thirdRowFirstCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowFirstCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
+        thirdRowFirstCulmnThirdStrataCube?.durableValue = 1
         
         firstRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        firstRowSecondCulmnThirdStrataCube?.durableValue = 1
         
         secondRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowSecondCulmnThirdStrataCube?.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        secondRowSecondCulmnThirdStrataCube?.durableValue = 1
         
         thirdRowSecondCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowSecondCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
+        thirdRowSecondCulmnThirdStrataCube?.durableValue = 1
         
         firstRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         firstRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        firstRowThirdCulmnThirdStrataCube?.durableValue = 1
         
         secondRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         secondRowThirdCulmnThirdStrataCube?.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
+        secondRowThirdCulmnThirdStrataCube?.durableValue = 1
         
         thirdRowThirdCulmnThirdStrataCube = ModelEntity(mesh: mesh, materials: [material])
         thirdRowThirdCulmnThirdStrataCube?.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
-        
+        thirdRowThirdCulmnThirdStrataCube?.durableValue = 1
         
      
         anchor?.addChild(firstRowFirstCulmnFirstStrataCube!)
@@ -1731,6 +1757,8 @@ class HomeViewController: UIViewController {
         shieldModel?.name = "shield"
         shieldModel?.generateCollisionShapes(recursive: false)
         
+        shieldModel?.durableValue = 27
+        
         
         shieldAnchor?.addChild(shieldModel!)
         // 追加
@@ -1741,6 +1769,24 @@ class HomeViewController: UIViewController {
     func onCollisionBegan(_ event: CollisionEvents.Began) {
         if event.entityA.name == "shield" && event.entityB.name == "cube" {
                         print("ffffffffffffffffffoooooooooooooo")
+            
+            // 点数計算
+            let shield = event.entityA
+            let cube = event.entityB
+            
+            let answer = shield.durableValue - cube.durableValue
+            
+            shield.durableValue -= cube.durableValue
+            cube.durableValue -= shield.durableValue
+            
+            if shield.durableValue <= 0 {
+                // シールド破壊
+            }
+            
+            if cube.durableValue <= 0 {
+                // cube破壊
+            }
+            
         }
         
                    
@@ -1821,121 +1867,146 @@ class HomeViewController: UIViewController {
         firstCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
         firstCube1.name = "cube"
         firstCube1.generateCollisionShapes(recursive: false)
+        firstCube1.durableValue = 1
         
         let secondCube1 = ModelEntity(mesh: mesh, materials: [material])
         secondCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), (anchor?.position.z)!)
         secondCube1.name = "cube"
         secondCube1.generateCollisionShapes(recursive: false)
+        secondCube1.durableValue = 1
         
         let thirdCube1 = ModelEntity(mesh: mesh, materials: [material])
         thirdCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
         thirdCube1.name = "cube"
         thirdCube1.generateCollisionShapes(recursive: false)
+        firstCube1.durableValue = 1
         
         let fourthCube1 = ModelEntity(mesh: mesh, materials: [material])
         fourthCube1.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, (anchor?.position.z)!)
         fourthCube1.name = "cube"
         fourthCube1.generateCollisionShapes(recursive: false)
+        firstCube1.durableValue = 1
         
         let fifthCube1 = ModelEntity(mesh: mesh, materials: [material])
         fifthCube1.position = anchor!.position
         fifthCube1.name = "cube"
         fifthCube1.generateCollisionShapes(recursive: false)
+        firstCube1.durableValue = 1
         
         let sixthCube1 = ModelEntity(mesh: mesh, materials: [material])
         sixthCube1.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, (anchor?.position.z)!)
         sixthCube1.name = "cube"
+        firstCube1.durableValue = 1
         
         let seventhCube1 = ModelEntity(mesh: mesh, materials: [material])
         seventhCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
         seventhCube1.name = "cube"
         seventhCube1.generateCollisionShapes(recursive: false)
+        firstCube1.durableValue = 1
         
         let eighthCube1 = ModelEntity(mesh: mesh, materials: [material])
         eighthCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), (anchor?.position.z)!)
         eighthCube1.name = "cube"
         eighthCube1.generateCollisionShapes(recursive: false)
+        firstCube1.durableValue = 1
         
         let ninethCube1 = ModelEntity(mesh: mesh, materials: [material])
         ninethCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
         ninethCube1.name = "cube"
         ninethCube1.generateCollisionShapes(recursive: false)
-        
+        firstCube1.durableValue = 1
         
         // 2
         let firstCube2 = ModelEntity(mesh: mesh, materials: [material])
         firstCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         firstCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let secondCube2 = ModelEntity(mesh: mesh, materials: [material])
         secondCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         secondCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let thirdCube2 = ModelEntity(mesh: mesh, materials: [material])
         thirdCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         thirdCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let fourthCube2 = ModelEntity(mesh: mesh, materials: [material])
         fourthCube2.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
         fourthCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let fifthCube2 = ModelEntity(mesh: mesh, materials: [material])
         fifthCube2.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! + length))
         fifthCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let sixthCube2 = ModelEntity(mesh: mesh, materials: [material])
         sixthCube2.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
         sixthCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let seventhCube2 = ModelEntity(mesh: mesh, materials: [material])
         seventhCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         seventhCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let eighthCube2 = ModelEntity(mesh: mesh, materials: [material])
         eighthCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         eighthCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         let ninethCube2 = ModelEntity(mesh: mesh, materials: [material])
         ninethCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         ninethCube2.name = "cube"
+        firstCube1.durableValue = 1
         
         // 3
         let firstCube3 = ModelEntity(mesh: mesh, materials: [material])
         firstCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         firstCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let secondCube3 = ModelEntity(mesh: mesh, materials: [material])
         secondCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         secondCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let thirdCube3 = ModelEntity(mesh: mesh, materials: [material])
         thirdCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         thirdCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let fourthCube3 = ModelEntity(mesh: mesh, materials: [material])
         fourthCube3.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
         fourthCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let fifthCube3 = ModelEntity(mesh: mesh, materials: [material])
         fifthCube3.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! - length))
         fifthCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let sixthCube3 = ModelEntity(mesh: mesh, materials: [material])
         sixthCube3.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
         sixthCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let seventhCube3 = ModelEntity(mesh: mesh, materials: [material])
         seventhCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         seventhCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let eighthCube3 = ModelEntity(mesh: mesh, materials: [material])
         eighthCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         eighthCube3.name = "cube"
+        firstCube1.durableValue = 1
         
         let ninethCube3 = ModelEntity(mesh: mesh, materials: [material])
         ninethCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         ninethCube3.name = "cube"
-        
+        firstCube1.durableValue = 1
         
         // センターキューブ
 
@@ -2167,50 +2238,70 @@ extension float4x4 {
 }
 
 extension Entity {
-    // 耐久値
-    var durableValue: Int {
-        get {
-            return self.durableValue
-        }
-        
-        set {
-            self.durableValue += newValue
-        }
+    
+    private struct additional {
+        static var durableValue: Int = 0
+        static var type: cubeType = .one
+        static var uuid: String = ""
     }
     
-    // 威力
-    var attackValue: Int {
+    var addedDurableValue: String {
         get {
-            return self.attackValue
+            guard let durableValue = objc_getAssociatedObject(self, &additional.durableValue) as? String else {
+                return ""
+            }
+            return durableValue
         }
         
-        set {
-            self.attackValue += newValue
-        }
+        set objc_setAssociatedObject(self, &additional.durableValue, newValue, .OBJC_ASSOCIATEO)
     }
     
-    // uuid
-    var type: cubeType {
+  
         
-        get {
-            return self.type
-        }
-        
-        set {
-            self.type = newValue
-        }
-    }
+   
+//    // 耐久値
+//    var durableValue: Int {
+//        get {
+//            return self.durableValue
+//        }
+//
+//        set {
+//            self.durableValue += newValue
+//        }
+//    }
+//
+//
+//
+//    // uuid
+//    var type: cubeType {
+//
+//        get {
+//            return self.type
+//        }
+//
+//        set {
+//            self.type = newValue
+//        }
+//    }
+//
+//    var uuid: String {
+//
+//        get {
+//            return self.uuid
+//        }
+//
+//        set {
+//            self.uuid = newValue
+//        }
+//    }
+//
+//    init(durableValue: Int, type: cubeType, uuid: String) {
+//        self.durableValue = durableValue
+//        self.type = type
+//        self.uuid = uuid
+//    }
+
     
-    var uuid: UUID {
-        
-        get {
-            return self.uuid
-        }
-        
-        set {
-            self.uuid = newValue
-        }
-    }
     
 }
 
