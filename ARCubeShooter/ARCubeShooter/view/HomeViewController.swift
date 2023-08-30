@@ -2253,7 +2253,9 @@ extension Entity {
             return durableValue
         }
         
-        set objc_setAssociatedObject(self, &additional.durableValue, newValue, .OBJC_ASSOCIATEO)
+        set {
+            objc_setAssociatedObject(self, &additional.durableValue, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
     }
     
   
