@@ -2258,6 +2258,32 @@ extension Entity {
         }
     }
     
+    var changedType: cubeType {
+        get {
+            guard let durableValue = objc_getAssociatedObject(self, &additional.durableValue) as? cubeType else {
+                return .one
+            }
+            return durableValue
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &additional.durableValue, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
+    var addedUUID: String {
+        get {
+            guard let durableValue = objc_getAssociatedObject(self, &additional.durableValue) as? String else {
+                return ""
+            }
+            return durableValue
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &additional.durableValue, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+    
   
         
    
