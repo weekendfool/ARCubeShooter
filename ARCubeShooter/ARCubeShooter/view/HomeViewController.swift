@@ -1757,7 +1757,7 @@ class HomeViewController: UIViewController {
         shieldModel?.name = "shield"
         shieldModel?.generateCollisionShapes(recursive: false)
         
-        shieldModel?.addedDurableValue = 27
+        shieldModel?.addedDurableValue = 9
         
         
         shieldAnchor?.addChild(shieldModel!)
@@ -1776,15 +1776,20 @@ class HomeViewController: UIViewController {
             
             let answer = shield.addedDurableValue - cube.addedDurableValue
             
-            shield.addedDurableValue -= cube.addedDurableValue
-            cube.addedDurableValue -= shield.addedDurableValue
+            let cubeDurableValue = cube.addedDurableValue
+            let shieldDurableValue = shield.addedDurableValue
+            
+            shield.addedDurableValue -= cubeDurableValue
+            cube.addedDurableValue -= shieldDurableValue
             
             if shield.addedDurableValue <= 0 {
                 // シールド破壊
+                print("booooon")
             }
             
             if cube.addedDurableValue <= 0 {
                 // cube破壊
+                print("////////////////////////////////////")
             }
             
         }
