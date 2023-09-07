@@ -1884,134 +1884,134 @@ class HomeViewController: UIViewController {
         thirdCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), (anchor?.position.z)!)
         thirdCube1.name = "cube"
         thirdCube1.generateCollisionShapes(recursive: false)
-        firstCube1.addedDurableValue = 1
+        thirdCube1.addedDurableValue = 1
         
         let fourthCube1 = ModelEntity(mesh: mesh, materials: [material])
         fourthCube1.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, (anchor?.position.z)!)
         fourthCube1.name = "cube"
         fourthCube1.generateCollisionShapes(recursive: false)
-        firstCube1.addedDurableValue = 1
+        fourthCube1.addedDurableValue = 1
         
         let fifthCube1 = ModelEntity(mesh: mesh, materials: [material])
         fifthCube1.position = anchor!.position
         fifthCube1.name = "cube"
         fifthCube1.generateCollisionShapes(recursive: false)
-        firstCube1.addedDurableValue = 1
+        fifthCube1.addedDurableValue = 1
         
         let sixthCube1 = ModelEntity(mesh: mesh, materials: [material])
         sixthCube1.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, (anchor?.position.z)!)
         sixthCube1.name = "cube"
-        firstCube1.addedDurableValue = 1
+        sixthCube1.addedDurableValue = 1
         
         let seventhCube1 = ModelEntity(mesh: mesh, materials: [material])
         seventhCube1.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
         seventhCube1.name = "cube"
         seventhCube1.generateCollisionShapes(recursive: false)
-        firstCube1.addedDurableValue = 1
+        seventhCube1.addedDurableValue = 1
         
         let eighthCube1 = ModelEntity(mesh: mesh, materials: [material])
         eighthCube1.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), (anchor?.position.z)!)
         eighthCube1.name = "cube"
         eighthCube1.generateCollisionShapes(recursive: false)
-        firstCube1.addedDurableValue = 1
+        eighthCube1.addedDurableValue = 1
         
         let ninethCube1 = ModelEntity(mesh: mesh, materials: [material])
         ninethCube1.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), (anchor?.position.z)!)
         ninethCube1.name = "cube"
         ninethCube1.generateCollisionShapes(recursive: false)
-        firstCube1.addedDurableValue = 1
+        ninethCube1.addedDurableValue = 1
         
         // 2
         let firstCube2 = ModelEntity(mesh: mesh, materials: [material])
         firstCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         firstCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        firstCube2.addedDurableValue = 1
         
         let secondCube2 = ModelEntity(mesh: mesh, materials: [material])
         secondCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         secondCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        secondCube2.addedDurableValue = 1
         
         let thirdCube2 = ModelEntity(mesh: mesh, materials: [material])
         thirdCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! + length))
         thirdCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        thirdCube2.addedDurableValue = 1
         
         let fourthCube2 = ModelEntity(mesh: mesh, materials: [material])
         fourthCube2.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
         fourthCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        fourthCube2.addedDurableValue = 1
         
         let fifthCube2 = ModelEntity(mesh: mesh, materials: [material])
         fifthCube2.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! + length))
         fifthCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        fifthCube2.addedDurableValue = 1
         
         let sixthCube2 = ModelEntity(mesh: mesh, materials: [material])
         sixthCube2.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! + length))
         sixthCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        sixthCube2.addedDurableValue = 1
         
         let seventhCube2 = ModelEntity(mesh: mesh, materials: [material])
         seventhCube2.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         seventhCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        seventhCube2.addedDurableValue = 1
         
         let eighthCube2 = ModelEntity(mesh: mesh, materials: [material])
         eighthCube2.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         eighthCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        eighthCube2.addedDurableValue = 1
         
         let ninethCube2 = ModelEntity(mesh: mesh, materials: [material])
         ninethCube2.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! + length))
         ninethCube2.name = "cube"
-        firstCube1.addedDurableValue = 1
+        ninethCube2.addedDurableValue = 1
         
         // 3
         let firstCube3 = ModelEntity(mesh: mesh, materials: [material])
         firstCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         firstCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        firstCube3.addedDurableValue = 1
         
         let secondCube3 = ModelEntity(mesh: mesh, materials: [material])
         secondCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         secondCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        secondCube3.addedDurableValue = 1
         
         let thirdCube3 = ModelEntity(mesh: mesh, materials: [material])
         thirdCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! + length), ((anchor?.position.z)! - length))
         thirdCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        thirdCube3.addedDurableValue = 1
         
         let fourthCube3 = ModelEntity(mesh: mesh, materials: [material])
         fourthCube3.position = simd_make_float3(((anchor?.position.x)! - length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
         fourthCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        fourthCube3.addedDurableValue = 1
         
         let fifthCube3 = ModelEntity(mesh: mesh, materials: [material])
         fifthCube3.position = simd_make_float3((anchor?.position.x)!, (anchor?.position.y)!, ((anchor?.position.z)! - length))
         fifthCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        fifthCube3.addedDurableValue = 1
         
         let sixthCube3 = ModelEntity(mesh: mesh, materials: [material])
         sixthCube3.position = simd_make_float3(((anchor?.position.x)! + length), (anchor?.position.y)!, ((anchor?.position.z)! - length))
         sixthCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        sixthCube3.addedDurableValue = 1
         
         let seventhCube3 = ModelEntity(mesh: mesh, materials: [material])
         seventhCube3.position = simd_make_float3(((anchor?.position.x)! - length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         seventhCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        seventhCube3.addedDurableValue = 1
         
         let eighthCube3 = ModelEntity(mesh: mesh, materials: [material])
         eighthCube3.position = simd_make_float3((anchor?.position.x)!, ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         eighthCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        eighthCube3.addedDurableValue = 1
         
         let ninethCube3 = ModelEntity(mesh: mesh, materials: [material])
         ninethCube3.position = simd_make_float3(((anchor?.position.x)! + length), ((anchor?.position.y)! - length), ((anchor?.position.z)! - length))
         ninethCube3.name = "cube"
-        firstCube1.addedDurableValue = 1
+        ninethCube3.addedDurableValue = 1
         
         // センターキューブ
 
@@ -2055,23 +2055,23 @@ class HomeViewController: UIViewController {
         arView.scene.addAnchor(anchor!)
         
         // 発射処理
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             let anime = firstCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
             let anime = secondCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.4) {
             let anime = thirdCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
         }
         
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.6) {
             let anime = fourthCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.4) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
             let anime = fifthCube1.move(to: movePosition, relativeTo: self.worldAnchor, duration: 2.0, timingFunction: .easeIn)
         }
        
